@@ -1,0 +1,229 @@
+:root {
+    /* Collors */
+        /* Primary */
+    --Moderate-violet: hsl(263, 55%, 52%);
+    --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --White: hsl(0, 0%, 100%);
+        /* Neutral */
+    --Light-gray: hsl(0, 0%, 81%);
+    --Light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+** {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-size: 16px;
+    font-weight: 500;
+    background-color: var(--Light-grayish-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0px;
+}
+
+h1 {
+    font-size: 0.9em;
+    letter-spacing: 0.03em;
+    margin: 0px; 
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 1.34em;
+    margin-top: 1em;
+    margin-bottom: 1.5em; 
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: 600;
+}
+
+p {
+    font-size: 0.83em;
+    letter-spacing: 0.03em;
+    margin: 0px;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: 500;
+    color: var(--Light-gray);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0em;
+    margin-right: 0em;
+    transition: all 1s;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 17em 18em 17em 17em;
+    grid-template-rows: 18em 18em;
+    grid-template-areas:
+        "purple purple lightGray second_white"
+        "first_white darkGrayish darkGrayish second_white"
+    ;
+    gap: 1em;
+    transition: all 1s;
+}
+
+.style_box {
+    border-radius: 8px;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 1em;
+}
+
+.default_box h1 {
+    color: var(--White);
+}
+
+.default_box h2 {
+    color: var(--White);
+}
+
+.white_box h1 {
+    color: var(--Very-dark-grayish-blue);
+}
+
+.white_box h2 {
+    color: var(--Very-dark-grayish-blue);
+}
+
+.image_perfil {
+    width: 2em;
+    height: 2em;
+    margin-right: 1.2em;
+    border-radius: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.flex_span {
+    display: flex;
+    align-items: center;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+.box_purple {
+    grid-area: purple;
+    background-color: var(--Moderate-violet);
+    background-image: url(./images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: 80% top;
+}
+
+.img_purple {
+    background-image: url(./images/image-daniel.jpg);
+    border: 0.15em solid hsla(0, 3%, 94%, 0.65);
+}
+
+.box_lightGray {
+    grid-area: lightGray;
+    background-color: var(--Very-dark-grayish-blue);
+}
+
+.img_lightGray {
+    background-image: url(./images/image-jonathan.jpg);
+}
+
+.box_firstWhite {
+    grid-area: first_white;
+    background-color: var(--White);
+}
+
+.img_firstWhite {
+    background-image: url(./images/image-jeanette.jpg);
+}
+
+.box_darkBlackish {
+    grid-area: darkGrayish;
+    background-color: var(--Very-dark-blackish-blue);
+}
+
+.img_darkBlackish {
+    background-image: url(./images/image-patrick.jpg);
+    border: 0.15em solid var(--Moderate-violet);
+}
+
+.box_secondWhite {
+    grid-area: second_white;
+    background-color: var(--White);
+}
+
+.img_secondWhite {
+    background-image: url(./images/image-kira.jpg);
+}
+
+.attribution {
+    margin-top: 1em;
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: 500; 
+}
+    
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+@media only screen and (max-width: 1200px) {
+    .grid {
+        display: grid;
+        grid-template-columns: 17em 18em 17em;
+        grid-template-rows: 18em 18em 18em;
+        grid-template-areas:
+            "purple purple lightGray"
+            "first_white darkGrayish darkGrayish"
+            "second_white second_white second_white"
+        ;
+        gap: 1em;
+    }
+}
+
+@media only screen and (max-width: 915px) {
+    .grid {
+        display: grid;
+        grid-template-columns: 17em 18em;
+        grid-template-rows: 18em 18em 18em 18em;
+        grid-template-areas:
+            "purple purple "
+            "lightGray first_white"
+            "darkGrayish darkGrayish"
+            "second_white second_white"
+        ;
+        gap: 1em;
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    .container {
+        margin: 1em;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto ;
+        grid-template-areas:
+            "purple purple "
+            "lightGray lightGray"
+            "first_white first_white"
+            "darkGrayish darkGrayish"
+            "second_white second_white"
+        ;
+        gap: 1em;
+    }
+}
